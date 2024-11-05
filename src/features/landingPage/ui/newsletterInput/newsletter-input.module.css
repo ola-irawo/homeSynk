@@ -1,0 +1,38 @@
+.form {
+  margin: 0 auto;
+  margin-top: clamp(2rem, 2vw, 3.2rem);
+  max-width: 52.6rem;
+  max-height: 6.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0rem 0.4rem 0.8rem 0rem #0000000f;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form input {
+  font-family: Inter;
+  font-size: clamp(1.182rem, 1.182vw, 1.6rem);
+  font-weight: 400;
+  line-height: clamp(1.772rem, 1.772vw, 2.4rem);
+  text-align: left;
+  color: #12141d;
+  opacity: 0.5;
+  margin-left: 1.519rem;
+}
+
+.form button {
+  /* width: clamp(11.9rem, 11.9vw, 13.2rem); */
+  /* height: clamp(4rem, 4vw, 2.4rem); */
+  margin: 0.4rem 0.3rem 0.4rem 0;
+  padding: 11.82px 14.77px 11.82px 14.77px;
+  gap: 7.38px;
+  border-radius: 0.738rem;
+  background-color: #4196e3;
+  font-family: Inter;
+  font-size: clamp(1rem, 1vw, 1.6rem);
+  font-weight: 600;
+  line-height: clamp(1.772rem, 1.772vw, 2.4rem);
+  text-align: right;
+  color: #fff;
+}
