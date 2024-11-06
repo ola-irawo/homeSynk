@@ -3,7 +3,6 @@ import React from 'react'
 import styles from "./footer.module.css"
 import useWindowWidth from '@/utils/useWindowWidth'
 import Image from 'next/image'
-import NewsletterInput from '../../ui/newsletterInput/NewsletterInput'
 import Link from 'next/link'
 
 const Footer = () => {

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./header.module.css";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useWindowWidth from "@/utils/useWindowWidth";
 
 const Header: React.FC = () => {

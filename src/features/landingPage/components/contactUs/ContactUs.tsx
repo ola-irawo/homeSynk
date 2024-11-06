@@ -8,9 +8,9 @@ const ContactUs:React.FC = () => {
         <div className={styles.contactWrapper}>
             <header className={styles.contactHeader}>
                 <span>Reach out to us</span>
-                <h2>Have an idea? Let’s talk.</h2>
+                <h2>Have an idea? Let&#39;s talk.</h2>
                 <p>
-                    Have a vision you'd like to bring to life? Let's connect and explore how we can make it happen together.
+                    Have a vision you&rsquo;d like to bring to life? Let&rsquo;s connect and explore how we can make it happen together.
                 </p>
             </header>
 
