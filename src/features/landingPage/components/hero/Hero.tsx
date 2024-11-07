@@ -1,11 +1,16 @@
-import React from 'react'
+"use client"
+import React, {forwardRef, RefObject} from 'react'
 import styles from "./hero.module.css"
 import Image from 'next/image'
 import NewsletterInput from '../../ui/newsletterInput/NewsletterInput'
 
-const Hero:React.FC = () => {
+interface HeroProps {
+  heroRef: RefObject<HTMLElement>;
+}
+
+const Hero:React.FC<HeroProps> = ((props, heroRef) => {
   return (
-    <section className={styles.heroContainer}>
+    <section ref={heroRef} className={styles.heroContainer}>
       <div className={styles.heroWrapper}>
 
         <aside className={styles.launchingSoon}>
@@ -40,6 +45,6 @@ const Hero:React.FC = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Hero

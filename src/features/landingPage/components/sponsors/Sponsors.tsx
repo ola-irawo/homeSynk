@@ -1,8 +1,9 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { forwardRef } from 'react';
 import styles from "./sponsors.module.css"
 
-const Sponsors = () => {
+const Sponsors = forwardRef<HTMLElement>((props, ref) => {
   return (
     <section>
       <div className={styles.sponsorsWrapper}>
@@ -15,6 +16,6 @@ const Sponsors = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Sponsors

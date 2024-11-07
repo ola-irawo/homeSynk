@@ -1,8 +1,9 @@
-import React from 'react'
+"use client"
+import React, {forwardRef} from 'react'
 import styles from "./team.module.css"
 import Image from 'next/image'
 
-const Team:React.FC = () => {
+const Team = forwardRef<HTMLElement>(() => {
   return (
     <section className={styles.teamContainer}>
         <div className={styles.teamWrapper}>
@@ -24,6 +25,6 @@ const Team:React.FC = () => {
         </div>
     </section>
   )
-}
+})
 
 export default Team

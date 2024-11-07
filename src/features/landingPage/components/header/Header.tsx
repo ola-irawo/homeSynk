@@ -1,16 +1,55 @@
 "use client";
+import React, { RefObject } from 'react';
 import Image from "next/image";
 import styles from "./header.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import useWindowWidth from "@/utils/useWindowWidth";
 
-const Header: React.FC = () => {
+interface HeroProps {
+  heroRef: RefObject<HTMLElement>;
+  sponsorsRef: RefObject<HTMLElement>;
+  getAppRef: RefObject<HTMLElement>;
+  aboutUsRef: RefObject<HTMLElement>;
+  featuresRef: RefObject<HTMLElement>;
+  teamRef: RefObject<HTMLElement>;
+  contactUsRef: RefObject<HTMLElement>;
+}
+
+
+const Header:React.FC<HeroProps> = ({
+    heroRef,
+    aboutUsRef,
+    featuresRef,
+    contactUsRef
+  }
+) => {
   const [showNav, setShowNav] = useState<boolean>(false);
   const windowWidth = useWindowWidth()
   const isMobile = windowWidth <= 1000
 
+  const scrollToSection = (sectionRef: any) => {
+    sectionRef?.current?.scrollIntoView(true);
+  };
 
+  const landingPageSections = [
+    {
+      label: "Home",
+      onClick: ():void => scrollToSection(heroRef),
+    },
+    {
+      label: "About us",
+      onClick: ():void  => scrollToSection(aboutUsRef),
+    },
+    {
+      label: "Features",
+      onClick: ():void  => scrollToSection(featuresRef),
+    },
+    {
+      label: "Contact",
+      onClick: ():void  => scrollToSection(contactUsRef),
+    },
+  ]
 
   return (
     <header className={styles.header}>
@@ -37,9 +76,12 @@ const Header: React.FC = () => {
       {(!isMobile || showNav) && (
         <nav className={styles.navContainer}>
           <ul className={styles.navList}>
-            {["Home", "About us", "Features", "Contact"].map((item) => (
-              <li key={item} className={styles.navItem}>
-                <Link href="">{item}</Link>
+            {landingPageSections.map((item, index) => (
+              <li key={index} className={styles.navItem}>
+                <Link 
+                  href=""
+                  onClick={(e) => {e.preventDefault(); item?.onClick()}}
+                >{item?.label}</Link>
                { isMobile && <button
                   aria-label={`Scroll to ${item}`}
                   onClick={() => setShowNav((prev) => !prev)}

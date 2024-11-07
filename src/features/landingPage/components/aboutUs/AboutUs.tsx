@@ -1,11 +1,12 @@
-import React from 'react'
+"use client"
+import React, {forwardRef} from 'react'
 import styles from "./about-us.module.css"
 import Image from 'next/image'
 
-const AboutUs = () => {
+const AboutUs = forwardRef<HTMLElement>((props, aboutUsRef) => {
 
   return (
-    <section className={styles.aboutContainer}>
+    <section ref={aboutUsRef} className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>
             <article className={styles.aboutContent}>
                 <span>Who we are at Homesynk</span>
@@ -28,5 +29,5 @@ const AboutUs = () => {
     </section>
   )
 }
-
+)
 export default AboutUs

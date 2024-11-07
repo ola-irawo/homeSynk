@@ -1,9 +1,10 @@
-import React from 'react'
+"use client"
+import React, {forwardRef} from 'react'
 import styles from "./contact-us.module.css"
 
-const ContactUs:React.FC = () => {
+const ContactUs = forwardRef<HTMLElement>((props, contactUsRef) => {
   return (
-    <section className={styles.contactContainer}>
+    <section ref={contactUsRef} className={styles.contactContainer}>
 
         <div className={styles.contactWrapper}>
             <header className={styles.contactHeader}>
@@ -77,6 +78,6 @@ const ContactUs:React.FC = () => {
 
     </section>
   )
-}
+})
 
 export default ContactUs

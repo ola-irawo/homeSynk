@@ -1,14 +1,14 @@
 "use client"
-import React from 'react'
+import React, {forwardRef} from 'react'
 import styles from "./features.module.css"
 import Image from 'next/image'
 import useWindowWidth from '@/utils/useWindowWidth'
 
-const Features:React.FC = () => {
+const Features = forwardRef<HTMLElement>((props, featuresRef) => {
     const windowWidth = useWindowWidth()
     const isTab = windowWidth >= 900
   return (
-    <section className={styles.featuresContainer}>
+    <section ref={featuresRef} className={styles.featuresContainer}>
       <div  className={styles.featuresWrapper}>
         
         <header className={styles.featuresHeader}>
@@ -131,6 +131,6 @@ const Features:React.FC = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Features
