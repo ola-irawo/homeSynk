@@ -8,7 +8,7 @@ interface HeroProps {
   heroRef: RefObject<HTMLElement>;
 }
 
-const Hero:React.FC<HeroProps> = ((props, heroRef) => {
+const Hero:React.FC<HeroProps> = (({}, heroRef) => {
   return (
     <section ref={heroRef} className={styles.heroContainer}>
       <div className={styles.heroWrapper}>

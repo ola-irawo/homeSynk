@@ -2,7 +2,7 @@
 import React, {forwardRef} from 'react'
 import styles from "./contact-us.module.css"
 
-const ContactUs = forwardRef<HTMLElement>((props, contactUsRef) => {
+const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
   return (
     <section ref={contactUsRef} className={styles.contactContainer}>
 

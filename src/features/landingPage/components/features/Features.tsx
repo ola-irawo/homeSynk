@@ -4,7 +4,7 @@ import styles from "./features.module.css"
 import Image from 'next/image'
 import useWindowWidth from '@/utils/useWindowWidth'
 
-const Features = forwardRef<HTMLElement>((props, featuresRef) => {
+const Features = forwardRef<HTMLElement>(({}, featuresRef) => {
     const windowWidth = useWindowWidth()
     const isTab = windowWidth >= 900
   return (

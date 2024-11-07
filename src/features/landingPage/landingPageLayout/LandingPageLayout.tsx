@@ -19,10 +19,6 @@ const LandingPageLayout = () => {
   const teamRef = useRef<HTMLElement>(null);
   const contactUsRef = useRef<HTMLElement>(null);
 
-  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <>
       <Header 

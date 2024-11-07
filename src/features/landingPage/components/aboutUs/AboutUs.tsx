@@ -3,7 +3,7 @@ import React, {forwardRef} from 'react'
 import styles from "./about-us.module.css"
 import Image from 'next/image'
 
-const AboutUs = forwardRef<HTMLElement>((props, aboutUsRef) => {
+const AboutUs = forwardRef<HTMLElement>(({}, aboutUsRef) => {
 
   return (
     <section ref={aboutUsRef} className={styles.aboutContainer}>
