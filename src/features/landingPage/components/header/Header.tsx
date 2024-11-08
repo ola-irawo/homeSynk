@@ -80,7 +80,10 @@ const Header:React.FC<HeroProps> = ({
               <li key={index} className={styles.navItem}>
                 <Link 
                   href=""
-                  onClick={(e) => {e.preventDefault(); item?.onClick()}}
+                  onClick={(e) => {
+                    e.preventDefault(); item?.onClick()
+                    isMobile && setShowNav(false)
+                  }}
                 >{item?.label}</Link>
                { isMobile && <button
                   aria-label={`Scroll to ${item}`}
