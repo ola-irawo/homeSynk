@@ -83,7 +83,6 @@ const Header:React.FC<HeroProps> = ({
                   onClick={(e) => {
                     e.preventDefault();
                     item?.onClick && item?.onClick()
-                    isMobile && setShowNav(false)
                   }}
                 >{item?.label}</Link>
                { isMobile && <button
