@@ -80,4 +80,6 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
   )
 })
 
+ContactUs.displayName = "ContactUs";
+
 export default ContactUs

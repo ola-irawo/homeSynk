@@ -5,7 +5,7 @@ import React, { forwardRef } from 'react';
 import styles from "./get-app.module.css"
 import useWindowWidth from '@/utils/useWindowWidth'
 
-const GetApp = forwardRef<HTMLElement>(({}, ref) => {
+const GetApp = forwardRef<HTMLElement>(({}) => {
   const windowWidth = useWindowWidth()
 
   const isTab = windowWidth >= 900
@@ -57,4 +57,5 @@ const GetApp = forwardRef<HTMLElement>(({}, ref) => {
   )
 })
 
+GetApp.displayName = "GetApp";
 export default GetApp

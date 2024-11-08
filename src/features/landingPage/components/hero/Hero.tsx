@@ -1,5 +1,5 @@
 "use client"
-import React, {forwardRef, RefObject} from 'react'
+import React, { RefObject} from 'react'
 import styles from "./hero.module.css"
 import Image from 'next/image'
 import NewsletterInput from '../../ui/newsletterInput/NewsletterInput'
@@ -47,4 +47,5 @@ const Hero:React.FC<HeroProps> = (({}, heroRef) => {
   )
 })
 
+Hero.displayName = "Hero";
 export default Hero

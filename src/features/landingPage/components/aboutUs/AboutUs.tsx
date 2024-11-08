@@ -30,4 +30,6 @@ const AboutUs = forwardRef<HTMLElement>(({}, aboutUsRef) => {
   )
 }
 )
+
+AboutUs.displayName = "AboutUs";
 export default AboutUs

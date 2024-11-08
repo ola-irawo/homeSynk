@@ -121,4 +121,5 @@ const Header:React.FC<HeroProps> = ({
   );
 };
 
+Header.displayName = "Header";
 export default Header;

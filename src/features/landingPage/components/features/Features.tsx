@@ -133,4 +133,6 @@ const Features = forwardRef<HTMLElement>(({}, featuresRef) => {
   )
 })
 
+Features.displayName = "Features"
+
 export default Features

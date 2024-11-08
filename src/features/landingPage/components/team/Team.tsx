@@ -27,4 +27,5 @@ const Team = forwardRef<HTMLElement>(() => {
   )
 })
 
+Team.displayName = "Team";
 export default Team
