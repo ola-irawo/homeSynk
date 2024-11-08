@@ -28,10 +28,10 @@ const Header:React.FC<HeroProps> = ({
   const windowWidth = useWindowWidth()
   const isMobile = windowWidth <= 1000
 
-  const scrollToSection = (sectionRef: any) => {
+  const scrollToSection = (sectionRef: RefObject<HTMLElement>) => {
     sectionRef?.current?.scrollIntoView(true);
   };
-
+  
   const landingPageSections = [
     {
       label: "Home",
