@@ -16,40 +16,38 @@ interface HeroProps {
   contactUsRef: RefObject<HTMLElement>;
 }
 
-
-const Header:React.FC<HeroProps> = ({
-    heroRef,
-    aboutUsRef,
-    featuresRef,
-    contactUsRef
-  }
-) => {
+const Header: React.FC<HeroProps> = ({
+  heroRef,
+  aboutUsRef,
+  featuresRef,
+  contactUsRef
+}) => {
   const [showNav, setShowNav] = useState<boolean>(false);
-  const windowWidth = useWindowWidth()
-  const isMobile = windowWidth <= 1000
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 1000;
 
   const scrollToSection = (sectionRef: RefObject<HTMLElement>) => {
-    sectionRef?.current?.scrollIntoView(true);
+    sectionRef?.current?.scrollIntoView({ behavior: "smooth" });
   };
-  
+
   const landingPageSections = [
     {
       label: "Home",
-      onClick: ():void => scrollToSection(heroRef),
+      onClick: () => scrollToSection(heroRef),
     },
     {
       label: "About us",
-      onClick: ():void  => scrollToSection(aboutUsRef),
+      onClick: () => scrollToSection(aboutUsRef),
     },
     {
       label: "Features",
-      onClick: ():void  => scrollToSection(featuresRef),
+      onClick: () => scrollToSection(featuresRef),
     },
     {
       label: "Contact",
-      onClick: ():void  => scrollToSection(contactUsRef),
+      onClick: () => scrollToSection(contactUsRef),
     },
-  ]
+  ];
 
   return (
     <header className={styles.header}>
@@ -63,14 +61,16 @@ const Header:React.FC<HeroProps> = ({
           priority
         />
 
-       {  windowWidth <= 1000 && isMobile && <Image
-          src={showNav ? "/closeNav.svg" : "/hamburger.svg"}
-          alt="Toggle navigation"
-          width={48}
-          height={48}
-          priority
-          onClick={() => setShowNav((prev) => !prev)}
-        />}
+        {isMobile && (
+          <Image
+            src={showNav ? "/closeNav.svg" : "/hamburger.svg"}
+            alt="Toggle navigation"
+            width={48}
+            height={48}
+            priority
+            onClick={() => setShowNav((prev) => !prev)}
+          />
+        )}
       </div>
 
       {(!isMobile || showNav) && (
@@ -79,24 +79,29 @@ const Header:React.FC<HeroProps> = ({
             {landingPageSections.map((item, index) => (
               <li key={index} className={styles.navItem}>
                 <Link 
-                  href=""
+                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    item?.onClick && item?.onClick()
+                    item.onClick();
+                    if (isMobile) setShowNav(false);
                   }}
-                >{item?.label}</Link>
-               { isMobile && <button
-                  aria-label={`Scroll to ${item}`}
-                  onClick={() => setShowNav((prev) => !prev)}
                 >
-                  <Image
-                    src={"/arrow-right.svg"}
-                    alt={"Scroll to" + item}
-                    width={24}
-                    height={24}
-                    priority
-                  />
-                </button>}
+                  {item.label}
+                </Link>
+                {isMobile && (
+                  <button
+                    aria-label={`Scroll to ${item.label}`}
+                    onClick={() => setShowNav((prev) => !prev)}
+                  >
+                    <Image
+                      src={"/arrow-right.svg"}
+                      alt={`Scroll to ${item.label}`}
+                      width={24}
+                      height={24}
+                      priority
+                    />
+                  </button>
+                )}
               </li>
             ))}
             <li className={styles.navItem}>
@@ -111,7 +116,7 @@ const Header:React.FC<HeroProps> = ({
                 <Image
                   src={"/phone.svg"}
                   alt="Phone icon"
-                  width={ isMobile ? 28 : 40}
+                  width={isMobile ? 28 : 40}
                   height={isMobile ? 28 : 40}
                   priority
                 />
