@@ -41,6 +41,7 @@
 
 .featuresList {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.52rem;
   color: #ffffff;
   padding-top: clamp(3.6rem, 3.6vw, 5rem);
@@ -48,13 +49,16 @@
 }
 
 .featuresItem {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   background-color: #222629;
-  width: clamp(30.3rem, 74.3vw, 60rem);
+  width: clamp(30.3rem, 100%, 60rem);
+  width: 100%;
+  /* width: clamp(30.3rem, 74.3vw, 60rem); */
   /* height: clamp(25.18rem, 25.18vw, 38.1rem); */
   border-radius: 1.322rem;
   /* padding: 3.304rem 2.28rem 1.811rem 2.677rem; */
   padding: 0.8rem 1rem;
+  padding-bottom: clamp(3.304rem, 3.304vw, 5rem);
 }
 
 .featuresItem img {
