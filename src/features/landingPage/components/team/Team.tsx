@@ -8,7 +8,7 @@ const Team = forwardRef<HTMLElement>(() => {
     <section className={styles.teamContainer}>
         <div className={styles.teamWrapper}>
             <Image
-                src="/coFounder.svg"
+                src="/coFounder1.png"
                 width={343}
                 height={343}
                 alt="Co-founder"
