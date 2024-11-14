@@ -67,11 +67,9 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
                     />
                 </label>
 
-                {/* <div className={styles.b}> */}
-                    <button>
-                        Submit
-                    </button>
-                {/* </div> */}
+                <button>
+                    Submit
+                </button>
 
             </form>
         </div>

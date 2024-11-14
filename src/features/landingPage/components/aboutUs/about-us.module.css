@@ -54,6 +54,7 @@
     padding-top: clamp(5rem, 5vw, 13rem);
     padding-right: clamp(5rem, 5vw, 10.5rem);
     gap: 4rem;
+    align-items: center;
   }
 
   .aboutContent {
@@ -64,7 +65,13 @@
     margin: unset;
     width: clamp(40.2rem, 40.2vw, 65.7rem);
     height: clamp(40.827rem, 40.827vw, 65.7rem);
-    align-self: flex-end;
+    /* align-self: flex-end; */
     grid-area: aboutImage;
+  }
+}
+
+@media (min-width: 1420px) {
+  .aboutWrapper {
+    padding-top: 0rem;
   }
 }

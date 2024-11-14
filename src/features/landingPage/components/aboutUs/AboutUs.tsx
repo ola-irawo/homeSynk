@@ -25,7 +25,6 @@ const AboutUs = forwardRef<HTMLElement>(({}, aboutUsRef) => {
                 className={styles.aboutImage}
             />
         </div>
-      
     </section>
   )
 }
