@@ -41,8 +41,8 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
                     <label htmlFor="name">
                         <h3>Phone Number</h3>
                         <input
-                            type="phone"
-                            name="phone"
+                            type="text"
+                            name="number"
                             placeholder="+234"
                             required
                         />

@@ -20,7 +20,7 @@ export const contactUs = async (formData: FormData) => {
     const subject = formData.get("subject") as string;
     const message = formData.get("message") as string;
 
-    console.log(name);
+    console.log(name, email, phone, subject, message );
 
     await fetch(`${apiUrl}/api/form/submit`, {
         method: "POST",
