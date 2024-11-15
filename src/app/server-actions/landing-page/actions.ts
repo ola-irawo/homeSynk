@@ -1,7 +1,7 @@
 const apiUrl = "https://homesync.onrender.com"
 
 
-export const joinWaitlist = async (formData: any) => {
+export const joinWaitlist = async (formData: FormData) => {
     const email = formData.get("email")
 
     const response = await fetch(`${apiUrl}/api/createRequest`, {
@@ -13,11 +13,9 @@ export const joinWaitlist = async (formData: any) => {
     });
 
     const data = await response.json()
-    console.log(data)
-
 }
 
-export const contactUs = async (formdData: any) => {
+export const contactUs = async (formdData: FormData) => {
     const name = formdData.get("name")
     const email = formdData.get("email")
     const phone = formdData.get("phone")
@@ -35,5 +33,4 @@ export const contactUs = async (formdData: any) => {
     });
 
     const data = await response.json()
-    console.log(data)
 }
