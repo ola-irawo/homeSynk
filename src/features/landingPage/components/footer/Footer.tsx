@@ -4,6 +4,7 @@ import styles from "./footer.module.css"
 import useWindowWidth from '@/utils/useWindowWidth'
 import Image from 'next/image'
 import Link from 'next/link'
+import { joinWaitlist } from '@/app/server-actions/landing-page/actions'
 
 const Footer = () => {
     const windowWidth = useWindowWidth()
@@ -29,7 +30,7 @@ const Footer = () => {
               <p>Use correct email address so as not to miss out.</p>
             </header>
           
-            <form className={styles.form}>
+            <form action={joinWaitlist} className={styles.form}>
               <input 
                 type="email"
                 name="email"

@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from "./newsletter-input.module.css"
+import { joinWaitlist } from '@/app/server-actions/landing-page/actions'
 
 const NewsletterInput:React.FC = () => {
   return (
-    <form className={styles.form}>
+    <form action={joinWaitlist} className={styles.form}>
       <input 
         type="email"
         name="email"

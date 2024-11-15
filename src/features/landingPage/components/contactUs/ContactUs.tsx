@@ -1,6 +1,7 @@
 "use client"
 import React, {forwardRef} from 'react'
 import styles from "./contact-us.module.css"
+import { contactUs } from '@/app/server-actions/landing-page/actions'
 
 const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
   return (
@@ -15,7 +16,7 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
                 </p>
             </header>
 
-            <form action="" className={styles.contactForm}>
+            <form action={contactUs} className={styles.contactForm}>
                 <div className={styles.contactInput}>
                     <label htmlFor="name">
                         <h3>Full Name</h3>
