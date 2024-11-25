@@ -18,14 +18,10 @@ const Footer = () => {
   
       const formData = new FormData(e.currentTarget)
   
-      try {
         const res = await joinWaitlist(formData)
         setStatusMessage(res)
         setEmail("")
-      } catch (err: any) {
-        setStatusMessage(err.message)
-      } finally {
-      }
+  
     }
 
     useEffect(() => {
