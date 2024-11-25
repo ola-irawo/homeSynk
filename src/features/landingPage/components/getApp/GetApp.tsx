@@ -5,7 +5,7 @@ import React, { forwardRef } from 'react';
 import styles from "./get-app.module.css"
 import useWindowWidth from '@/utils/useWindowWidth'
 
-const GetApp = forwardRef<HTMLElement>(({}) => {
+const GetApp = forwardRef<HTMLElement>(({}, getAppRef) => {
   const windowWidth = useWindowWidth()
 
   const isTab = windowWidth >= 900

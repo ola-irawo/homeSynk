@@ -1,15 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./newsletter-input.module.css"
 import { joinWaitlist } from '@/app/server-actions/landing-page/actions'
+import StatusMessage from '../statusMessage/StatusMessage'
 
 const NewsletterInput:React.FC = () => {
+  const [email, setEmail] = useState("")
+  const [statusMessage, setStatusMessage] = useState<string>("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const res = await joinWaitlist(formData)
+      setStatusMessage(res)
+      setEmail("")
+    } catch (err: any) {
+      setStatusMessage(err.message)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStatusMessage("")
+    }, 5000);
+  }, [statusMessage])
+
   return (
-    <form action={joinWaitlist} className={styles.form}>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      {statusMessage && <StatusMessage message={statusMessage} />}
       <input 
         type="email"
         name="email"
+        value={email}
         placeholder="Enter your email address"
         aria-label="Enter your email address"
+        onChange={(e) => setEmail(e.target.value)}
     />
 
     <button

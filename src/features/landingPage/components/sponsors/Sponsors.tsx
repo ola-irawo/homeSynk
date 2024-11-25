@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { forwardRef } from 'react';
 import styles from "./sponsors.module.css"
 
-const Sponsors = forwardRef<HTMLElement>(({},) => {
+const Sponsors = forwardRef<HTMLElement>(({}, sponsorsRef) => {
   return (
     <section>
       <div className={styles.sponsorsWrapper}>

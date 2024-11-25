@@ -1,12 +1,39 @@
 "use client"
-import React, {forwardRef} from 'react'
+import React, {forwardRef, useEffect, useState} from 'react'
 import styles from "./contact-us.module.css"
 import { contactUs } from '@/app/server-actions/landing-page/actions'
+import StatusMessage from '../../ui/statusMessage/StatusMessage'
 
 const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
+    const [status, setStatus] = useState<string>("");
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    
+        const formData = new FormData(event.currentTarget);
+
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}: ${value}`);
+        }
+        
+        try {
+          const res = await contactUs(formData);
+          setStatus(res);
+          event.currentTarget.reset(); 
+        } catch (error) {
+          setStatus("");
+        }
+      };
+
+      useEffect(() => {
+        setTimeout(() => {
+          setStatus("")
+        }, 5000);
+      }, [status])
+    
   return (
     <section ref={contactUsRef} className={styles.contactContainer}>
-
+        {status && <StatusMessage message={status} />}
         <div className={styles.contactWrapper}>
             <header className={styles.contactHeader}>
                 <span>Reach out to us</span>
@@ -16,7 +43,7 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
                 </p>
             </header>
 
-            <form action={contactUs} className={styles.contactForm}>
+            <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div className={styles.contactInput}>
                     <label htmlFor="name">
                         <h3>Full Name</h3>
@@ -28,7 +55,7 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
                         />
                     </label>
 
-                    <label htmlFor="name">
+                    <label htmlFor="email">
                         <h3>Emaill address</h3>
                         <input
                             type="email"
@@ -38,7 +65,7 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
                         />
                     </label>
 
-                    <label htmlFor="name">
+                    <label htmlFor="number">
                         <h3>Phone Number</h3>
                         <input
                             type="text"
@@ -48,7 +75,7 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
                         />
                     </label>
 
-                    <label htmlFor="name">
+                    <label htmlFor="subject">
                         <h3>Subject</h3>
                         <input
                             type="text"

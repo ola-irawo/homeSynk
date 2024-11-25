@@ -1,17 +1,46 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./footer.module.css"
 import useWindowWidth from '@/utils/useWindowWidth'
 import Image from 'next/image'
 import Link from 'next/link'
 import { joinWaitlist } from '@/app/server-actions/landing-page/actions'
+import StatusMessage from '../../ui/statusMessage/StatusMessage'
 
 const Footer = () => {
     const windowWidth = useWindowWidth()
     const isTab = windowWidth >= 1000
+    const [email, setEmail] = useState("")
+    const [statusMessage, setStatusMessage] = useState<string>("")
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      setIsSubmitting(true)
+  
+      const formData = new FormData(e.currentTarget)
+      // formData.set("email", email)
+  
+      try {
+        const res = await joinWaitlist(formData)
+        setStatusMessage(res)
+        setEmail("")
+      } catch (err: any) {
+        setStatusMessage(err.message)
+      } finally {
+        setIsSubmitting(false)
+      }
+    }
+
+    useEffect(() => {
+      setTimeout(() => {
+        setStatusMessage("")
+      }, 5000);
+    }, [statusMessage])
 
   return (
     <footer className={styles.footer}>
+      {statusMessage && <StatusMessage message={statusMessage} />}
       <div className={styles.footerWrapper}>
 
         <div className={styles.newsForm}>
@@ -30,12 +59,15 @@ const Footer = () => {
               <p>Use correct email address so as not to miss out.</p>
             </header>
           
-            <form action={joinWaitlist} className={styles.form}>
+            <form onSubmit={handleSubmit} className={styles.form}>
               <input 
                 type="email"
                 name="email"
+                value={email}
                 placeholder="Enter your email address"
                 aria-label="Enter your email address"
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
 
               <button
