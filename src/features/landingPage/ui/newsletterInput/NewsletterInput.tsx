@@ -6,11 +6,9 @@ import StatusMessage from '../statusMessage/StatusMessage'
 const NewsletterInput:React.FC = () => {
   const [email, setEmail] = useState("")
   const [statusMessage, setStatusMessage] = useState<string>("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsSubmitting(true)
 
     const formData = new FormData(e.currentTarget)
 
@@ -18,11 +16,9 @@ const NewsletterInput:React.FC = () => {
       const res = await joinWaitlist(formData)
       setStatusMessage(res)
       setEmail("")
-    } catch (err: any) {
-      setStatusMessage(err.message)
-    } finally {
-      setIsSubmitting(false)
-    }
+    } catch (err) {
+      setStatusMessage("")
+    } 
   }
 
   useEffect(() => {

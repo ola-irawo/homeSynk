@@ -11,7 +11,7 @@ const GetApp = forwardRef<HTMLElement>(({}, getAppRef) => {
   const isTab = windowWidth >= 900
 
   return (
-    <section className={styles.container}>
+    <section ref={getAppRef} className={styles.container}>
 
     <div className={styles.wrapper}>
 

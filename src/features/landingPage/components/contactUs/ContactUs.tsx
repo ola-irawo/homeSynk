@@ -11,10 +11,6 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
         event.preventDefault();
     
         const formData = new FormData(event.currentTarget);
-
-        for (let [key, value] of formData.entries()) {
-            console.log(`${key}: ${value}`);
-        }
         
         try {
           const res = await contactUs(formData);

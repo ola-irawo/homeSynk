@@ -12,14 +12,11 @@ const Footer = () => {
     const isTab = windowWidth >= 1000
     const [email, setEmail] = useState("")
     const [statusMessage, setStatusMessage] = useState<string>("")
-    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
-      setIsSubmitting(true)
   
       const formData = new FormData(e.currentTarget)
-      // formData.set("email", email)
   
       try {
         const res = await joinWaitlist(formData)
@@ -28,7 +25,6 @@ const Footer = () => {
       } catch (err: any) {
         setStatusMessage(err.message)
       } finally {
-        setIsSubmitting(false)
       }
     }
 

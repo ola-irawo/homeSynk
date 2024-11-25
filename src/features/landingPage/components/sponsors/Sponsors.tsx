@@ -5,7 +5,7 @@ import styles from "./sponsors.module.css"
 
 const Sponsors = forwardRef<HTMLElement>(({}, sponsorsRef) => {
   return (
-    <section>
+    <section ref={sponsorsRef}>
       <div className={styles.sponsorsWrapper}>
         <Image
           src={"/sponsors.svg"}
