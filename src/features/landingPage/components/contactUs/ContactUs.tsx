@@ -11,10 +11,9 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
         event.preventDefault();
     
         const formData = new FormData(event.currentTarget);
-        
-          const res = await contactUs(formData);
-          setStatus(res);
-          event.currentTarget.reset(); 
+        const res = await contactUs(formData);
+        setStatus(res);
+        event.currentTarget.reset(); 
       };
 
       useEffect(() => {
