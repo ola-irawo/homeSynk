@@ -12,7 +12,7 @@ const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
     
         const formData = new FormData(event.currentTarget);
         const res = await contactUs(formData);
-        setStatus(res);
+        setStatus(res.message);
         event.currentTarget.reset(); 
       };
 

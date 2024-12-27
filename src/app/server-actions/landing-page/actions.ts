@@ -31,7 +31,6 @@ export const contactUs = async (formData: FormData) => {
     });
 
     const data = await res.json()
-    console.log(data)
     return data
 
 };
