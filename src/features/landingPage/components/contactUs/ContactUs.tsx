@@ -5,14 +5,14 @@ import { contactUs } from '@/app/server-actions/landing-page/actions'
 import StatusMessage from '../../ui/statusMessage/StatusMessage'
 
 const ContactUs = forwardRef<HTMLElement>(({}, contactUsRef) => {
-    const [status, setStatus] = useState<string>("");
+    const [status, setStatus] = useState<string | any>("");
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
     
         const formData = new FormData(event.currentTarget);
         const res = await contactUs(formData);
-        setStatus(res.message);
+        setStatus(res);
         event.currentTarget.reset(); 
       };
 
