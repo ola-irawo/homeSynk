@@ -22,13 +22,13 @@ const LandingPageLayout = () => {
   return (
     <>
       <Header 
-         heroRef={heroRef}
-         sponsorsRef={sponsorsRef}
-         getAppRef={getAppRef}
-         aboutUsRef={aboutUsRef}
-         featuresRef={featuresRef}
-         teamRef={teamRef}
-         contactUsRef={contactUsRef}
+        heroRef={heroRef}
+        sponsorsRef={sponsorsRef}
+        getAppRef={getAppRef}
+        aboutUsRef={aboutUsRef}
+        featuresRef={featuresRef}
+        teamRef={teamRef}
+        contactUsRef={contactUsRef}
       />
       <Hero heroRef={heroRef}/>
       <Sponsors ref={sponsorsRef} />

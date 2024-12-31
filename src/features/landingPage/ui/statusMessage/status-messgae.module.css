@@ -12,9 +12,7 @@
 }
 
 .container div {
-  display: grid;
-  grid-template-columns: 2.4rem 1fr;
-  gap: 2rem;
+  display: flex;
   align-items: center;
 }
 
@@ -28,6 +26,7 @@
   text-decoration-skip-ink: none;
   color: #419423;
   font-family: Space Grotesk;
+  margin-left: clamp(1rem, 2vw, 2rem);
 }
 
 .container svg {

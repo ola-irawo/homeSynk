@@ -3,6 +3,12 @@ import styles from "./newsletter-input.module.css"
 import { joinWaitlist } from '@/app/server-actions/landing-page/actions'
 import StatusMessage from '../statusMessage/StatusMessage'
 
+interface Message {
+  message?: string,
+  error?: string,
+}
+
+
 const NewsletterInput:React.FC = () => {
   const [email, setEmail] = useState("")
   const [statusMessage, setStatusMessage] = useState<string | any>("")
