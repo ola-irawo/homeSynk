@@ -47,6 +47,10 @@ const Header: React.FC<HeroProps> = ({
       label: "Contact",
       onClick: () => scrollToSection(contactUsRef),
     },
+    {
+      label: "FindHouse",
+      onClick: () => "find-house",
+    },
   ];
 
   return (
