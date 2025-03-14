@@ -61,6 +61,7 @@
 
 .rightSection {
   width: clamp(34.3rem, 38.3vw, 59.7rem);
+  width: clamp(30rem, 38.3vw, 59.7rem);
   /* width: 100%; */
   max-width: 59.7rem;
   /* height: clamp(41.3rem, 41.3vw, 71.9rem); */
