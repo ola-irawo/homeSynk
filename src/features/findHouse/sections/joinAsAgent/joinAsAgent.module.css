@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  /* margin: auto; */
   padding: 2rem;
   background-color: #cce6fe;
 }
@@ -36,7 +35,6 @@
 
 .button {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-family: Clash Display;
   font-weight: 500;
@@ -111,7 +109,7 @@
 
 @media (min-width: 768px) {
   .container {
-    padding-left: clamp(5vw, 5rem, 15.5rem);
+    /* padding-left: clamp(5vw, 5rem, 15.5rem); */
     flex-direction: row;
     justify-content: space-between;
   }

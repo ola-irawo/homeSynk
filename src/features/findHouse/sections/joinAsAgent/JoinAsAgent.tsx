@@ -15,7 +15,7 @@ const JoinAsAgent = () => {
           </p>
           <button className={styles.button}>
             <span>
-              Register
+              Register Now
             </span>
             
             <Image
