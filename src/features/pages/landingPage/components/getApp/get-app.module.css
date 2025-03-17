@@ -1,0 +1,73 @@
+.container {
+  background-color: #101010;
+  color: #ffffff;
+}
+
+.wrapper {
+  padding: 1.9rem 2.1rem 0 2.1rem;
+  min-width: 28rem;
+}
+
+.content {
+  max-width: 105.6rem;
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 4.201rem;
+}
+
+.content h2 {
+  font-size: clamp(4.5rem, 4.5vw, 9rem);
+  font-weight: 400;
+  line-height: clamp(4.5rem, 4.5vw, 8.8rem);
+  letter-spacing: -0.02em;
+  text-align: left;
+  /* width: clamp(28rem, 34.3vw, 105.6rem); */
+  max-width: 105.6rem;
+}
+
+.content p {
+  font-size: clamp(1.8rem, 1.8vw, 2.2rem);
+  font-weight: clamp(400, 400, 500);
+  line-height: clamp(2.4rem, 2.4vw, 3rem);
+  letter-spacing: -0.30000001192092896px;
+  text-align: left;
+  /* width: clamp(28rem, 34.3vw, 78.5rem); */
+  max-width: 78.5rem;
+}
+
+.appLink {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  /* width: clamp(28.3, 34.3vw, 40.3rem); */
+  max-width: 28rem;
+}
+
+.appLink a img {
+  width: clamp(15rem, 16.7vw, 19.2rem);
+  height: clamp(5.8rem, 5.8vw, 7.547rem);
+}
+
+.appUi {
+  display: flex;
+  margin: 0 auto;
+  width: clamp(32.2rem, 52.2vw, 57.2rem);
+  height: clamp(45.827rem, 45.827vw, 58.8rem);
+  margin-top: 1.423rem;
+}
+
+@media (min-width: 900px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    max-height: 163.8rem;
+    padding-bottom: clamp(6rem, 6vw, 10.1rem);
+    padding-left: clamp(5rem, 5vw, 10.4rem);
+    padding-top: clamp(5rem, 5vw, 10.6rem);
+    padding-right: clamp(5rem, 5vw, 17.8rem);
+  }
+
+  .appUi {
+    margin-top: unset;
+  }
+}

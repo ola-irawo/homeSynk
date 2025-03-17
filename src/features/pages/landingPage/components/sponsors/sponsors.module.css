@@ -1,0 +1,5 @@
+div.sponsorsWrapper img {
+  width: 100%;
+  height: clamp(6.2rem, 8.2vw, 18.6rem);
+  object-fit: cover;
+}

@@ -1,0 +1,77 @@
+.aboutWrapper {
+  padding: 3.5rem 1.6rem 3.5rem 1.6rem;
+  min-width: 28rem;
+}
+
+.aboutContent span {
+  font-size: clamp(1.6rem, 1.6vw, 3rem);
+  font-weight: 500;
+  line-height: clamp(2rem, 2vw, 3.6rem);
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: #4196e3;
+}
+
+.aboutContent h2 {
+  font-size: clamp(4.5rem, 4.5vw, 9rem);
+  font-weight: 400;
+  line-height: clamp(4.5rem, 4.5vw, 8.8rem);
+  letter-spacing: -0.02em;
+  text-align: left;
+  /* width: clamp(28rem, 34.3vw, 105.6rem); */
+  max-width: 105.6rem;
+  margin-top: 1.2rem;
+  color: #1b1c20;
+}
+
+.aboutContent p {
+  font-size: clamp(1.8rem, 1.8vw, 2.2rem);
+  font-weight: clamp(400, 400, 500);
+  line-height: clamp(2.4rem, 2.4vw, 3rem);
+  letter-spacing: -0.30000001192092896px;
+  text-align: left;
+  /* width: clamp(28rem, 34.3vw, 78.5rem); */
+  max-width: 78.5rem;
+  margin-top: 1.2rem;
+  color: #383a47;
+}
+
+.aboutImage {
+  display: flex;
+  margin: 0 auto;
+  width: clamp(30.2rem, 32.2vw, 65.7rem);
+  height: clamp(32.827rem, 32.827vw, 65.7rem);
+}
+
+@media (min-width: 900px) {
+  .aboutWrapper {
+    display: grid;
+    grid-template-areas: "aboutImage content";
+    grid-template-columns: 0.6fr 1fr;
+    max-height: 65.7rem;
+    padding-bottom: clamp(6rem, 6vw, 13rem);
+    padding-left: clamp(5rem, 5vw, 10.5rem);
+    padding-top: clamp(5rem, 5vw, 13rem);
+    padding-right: clamp(5rem, 5vw, 10.5rem);
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .aboutContent {
+    grid-area: content;
+  }
+
+  .aboutImage {
+    margin: unset;
+    width: clamp(40.2rem, 40.2vw, 65.7rem);
+    height: clamp(40.827rem, 40.827vw, 65.7rem);
+    /* align-self: flex-end; */
+    grid-area: aboutImage;
+  }
+}
+
+@media (min-width: 1420px) {
+  .aboutWrapper {
+    padding-top: 0rem;
+  }
+}

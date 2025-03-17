@@ -1,0 +1,141 @@
+.header {
+  border-bottom: 0.1rem solid
+    linear-gradient(133.38deg, #4196e3 49.62%, #373598 100%);
+  border-bottom: 1px solid;
+  padding-left: 2.2rem;
+  padding-right: 0.9rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.logoContainer {
+  padding-top: 1.4rem;
+  padding-bottom: 1.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navContainer {
+  /* width: 31.9rem; */
+  min-width: 28rem;
+  height: 33rem;
+  margin-bottom: 4rem;
+  padding: 0 2.8rem;
+}
+
+.navList {
+  display: grid;
+  gap: 1rem;
+}
+
+.navItem {
+  height: 5.2rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #0000000d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navItem a {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: -2%;
+  color: #242124;
+  padding-left: 2.4rem;
+}
+
+.navItem button {
+  padding-right: 1.4rem;
+}
+
+.navItem:last-of-type {
+  height: 8.2rem;
+  border: 0.1rem solid #565656;
+}
+.navItem:last-of-type a {
+  display: grid;
+}
+
+.span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  color: #565656;
+}
+
+@media (min-width: 1000px) {
+  .header {
+    display: flex;
+    align-items: center;
+    height: 10.6rem;
+  }
+
+  .navContainer {
+    all: unset;
+    flex: 1;
+  }
+
+  .navList {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .navItem {
+    all: unset;
+  }
+
+  .navItem a {
+    padding-left: unset;
+    line-height: unset;
+    letter-spacing: unset;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    font-size: clamp(1.6rem, 1.6vw, 2rem);
+  }
+
+  .navItem a.active,
+  .navItem a:hover {
+    color: #4196e3;
+    font-weight: 700;
+  }
+
+  .navItem:first-of-type {
+    margin-left: auto;
+  }
+
+  .navItem:last-of-type {
+    all: unset;
+    margin-left: auto;
+    margin-right: clamp(3rem, 3vw, 12.5rem);
+    display: grid;
+    align-items: center;
+    grid-template-areas: "phone text";
+  }
+
+  .span {
+    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+    color: #999999;
+  }
+
+  .navItem:last-of-type img {
+    grid-area: phone;
+  }
+
+  .navItem:last-of-type a {
+    display: grid;
+    font-size: clamp(1.6rem, 1.6vw, 2rem);
+    font-weight: 500;
+    line-height: 3rem;
+    text-align: left;
+    grid-area: text;
+  }
+}

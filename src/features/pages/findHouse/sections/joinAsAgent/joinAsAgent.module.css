@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #cce6fe;
+}
+
+.leftSectionContent {
+  max-width: 78.5rem;
+}
+
+.leftSection h2 {
+  width: clamp(30.3rem, 38.3vw, 93.6rem);
+  /* height: clamp(13.5rem, 13.5vw, 23.2rem); */
+  font-family: Space Grotesk;
+  font-weight: 700;
+  font-size: clamp(4.5rem, 4.5vw, 10rem);
+  line-height: clamp(4.5rem, 4.5vw, 11.6rem);
+  letter-spacing: -2%;
+  color: #000000;
+  font-family: Clash Display;
+  margin-bottom: clamp(2rem, 2vw, 2.6rem);
+}
+
+.leftSection p {
+  font-family: Space Grotesk;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 1.8vw, 2.4rem);
+  line-height: clamp(2.4rem, 2.4vw, 3.6rem);
+  letter-spacing: 0px;
+  color: #000000;
+  margin-bottom: clamp(2rem, 2vw, 2.6rem);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  font-family: Clash Display;
+  font-weight: 500;
+  font-size: clamp(1.87rem, 1.87vw, 2.4rem);
+  line-height: clamp(2.85rem, 2.85vw, 3.6rem);
+  letter-spacing: -2.5%;
+  text-align: center;
+  width: clamp(18.7rem, 18.7vw, 24rem);
+  height: clamp(4.6rem, 4.6vw, 6rem);
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: clamp(0.779rem, 0.779vw, 1rem);
+  padding: clamp(0.935rem, 0.935vw, 1.2rem) clamp(1.948rem, 1.948vw, 2.5rem);
+  padding-right: 0.8rem;
+}
+
+.button img {
+  margin-left: clamp(1rem, 1vw, 1.3rem);
+  width: clamp(3.428rem, 3.428vw, 4.4rem);
+  height: clamp(3.426rem, 3.428vw, 4.4rem);
+}
+
+.rightSection {
+  width: clamp(34.3rem, 38.3vw, 59.7rem);
+  width: clamp(30rem, 38.3vw, 59.7rem);
+  /* width: 100%; */
+  max-width: 59.7rem;
+  /* height: clamp(41.3rem, 41.3vw, 71.9rem); */
+  gap: clamp(1.379rem, 1.379vw, 2.4rem);
+  border-radius: clamp(0.919rem, 0.919vw, 1.6rem);
+  border-width: (0.46rem, 0.46vw, 0.8rem);
+  padding: clamp(2.298rem, 2.298vw, 4rem) clamp(1.839rem, 1.839vw, 3.2rem);
+  background-color: #ffffff;
+  border: clamp(0.46rem, 0.46vw, 0.8rem) solid #4196e3;
+  display: flex;
+  flex-direction: column;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  height: clamp(3.68rem, 3.68vw, 6.4rem);
+  border-radius: clamp(0.46rem, 0.46vw, 0.8rem);
+  color: #21212114;
+  font-family: Space Grotesk;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.6vw, 2rem);
+  line-height: 100%;
+  letter-spacing: -1%;
+  padding: clamp(0.843rem, 0.834vw, 2rem) clamp(1.34rem, 1.34vw, 2.4rem);
+  background-color: #21212114;
+}
+
+.textarea {
+  height: clamp(6.95rem, 6.95vw, 12.1rem);
+  resize: none;
+}
+
+.formButton {
+  font-family: Space Grotesk;
+  font-weight: 700;
+  font-size: 13.79px;
+  line-height: 120%;
+  letter-spacing: -1%;
+  color: #ffffff;
+  background-color: #4196e3;
+  height: 34.47236251831055;
+  border-radius: 0.46rem;
+  padding: 0.919rem 0.6894rem;
+  /* margin-bottom: clamp(1.953rem, 1.953vw, 3.4rem); */
+}
+
+@media (min-width: 768px) {
+  .container {
+    /* padding-left: clamp(5vw, 5rem, 15.5rem); */
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .leftSection,
+  .rightSection {
+    flex: 1;
+  }
+
+  /* .button {
+    width: auto;
+    padding: 12px 20px;
+  } */
+}
