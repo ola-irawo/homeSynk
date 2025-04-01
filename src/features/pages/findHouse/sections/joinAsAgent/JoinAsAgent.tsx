@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useActionState } from "react";
-import styles from "./JoinAsAgent.module.css";
+import styles from "./joinAsAgent.module.css";
 import Image from "next/image";
 import { submitAgentForm } from "@/app/server-actions/findHouse/action";
 
