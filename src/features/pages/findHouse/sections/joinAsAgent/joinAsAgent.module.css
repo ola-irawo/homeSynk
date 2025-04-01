@@ -78,7 +78,6 @@
   width: 100%;
   height: clamp(3.68rem, 3.68vw, 6.4rem);
   border-radius: clamp(0.46rem, 0.46vw, 0.8rem);
-  color: #21212114;
   font-family: Space Grotesk;
   font-weight: 400;
   font-size: clamp(1.6rem, 1.6vw, 2rem);
@@ -86,6 +85,7 @@
   letter-spacing: -1%;
   padding: clamp(0.843rem, 0.834vw, 2rem) clamp(1.34rem, 1.34vw, 2.4rem);
   background-color: #21212114;
+  color: #212121;
 }
 
 .textarea {
@@ -109,7 +109,6 @@
 
 @media (min-width: 768px) {
   .container {
-    /* padding-left: clamp(5vw, 5rem, 15.5rem); */
     flex-direction: row;
     justify-content: space-between;
   }
@@ -118,9 +117,4 @@
   .rightSection {
     flex: 1;
   }
-
-  /* .button {
-    width: auto;
-    padding: 12px 20px;
-  } */
 }
