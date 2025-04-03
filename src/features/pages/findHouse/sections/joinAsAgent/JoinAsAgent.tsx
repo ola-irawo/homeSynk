@@ -26,7 +26,7 @@ const JoinAsAgent = () => {
           </button>
         </div>
       </section>
-
+{/*  */}
       {/* Right Section */}
       <section>
         <form action={formAction} className={styles.rightSection}>
